@@ -1,0 +1,128 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "EC2InstanceId": {
+                    "description": "<p/>",
+                    "maxLength": 20,
+                    "type": "string"
+                },
+                "Hostname": {
+                    "description": "<p/>",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "ResourceARN": {
+                    "description": "<p/>",
+                    "maxLength": 500,
+                    "type": "string"
+                },
+                "TelemetryRecords": {
+                    "description": "<p/>",
+                    "items": {
+                        "description": "<p/>",
+                        "properties": {
+                            "BackendConnectionErrors": {
+                                "description": "<p/>",
+                                "properties": {
+                                    "ConnectionRefusedCount": {
+                                        "description": "<p/>",
+                                        "type": "integer"
+                                    },
+                                    "HTTPCode4XXCount": {
+                                        "description": "<p/>",
+                                        "type": "integer"
+                                    },
+                                    "HTTPCode5XXCount": {
+                                        "description": "<p/>",
+                                        "type": "integer"
+                                    },
+                                    "OtherCount": {
+                                        "description": "<p/>",
+                                        "type": "integer"
+                                    },
+                                    "TimeoutCount": {
+                                        "description": "<p/>",
+                                        "type": "integer"
+                                    },
+                                    "UnknownHostCount": {
+                                        "description": "<p/>",
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "SegmentsReceivedCount": {
+                                "description": "<p/>",
+                                "type": "integer"
+                            },
+                            "SegmentsRejectedCount": {
+                                "description": "<p/>",
+                                "type": "integer"
+                            },
+                            "SegmentsSentCount": {
+                                "description": "<p/>",
+                                "type": "integer"
+                            },
+                            "SegmentsSpilloverCount": {
+                                "description": "<p/>",
+                                "type": "integer"
+                            },
+                            "Timestamp": {
+                                "description": "<p/>",
+                                "format": "date-time",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Timestamp"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "TelemetryRecords"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

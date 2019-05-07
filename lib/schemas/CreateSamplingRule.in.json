@@ -1,0 +1,150 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "SamplingRule": {
+                    "description": "The rule definition.",
+                    "properties": {
+                        "Attributes": {
+                            "description": "Matches attributes derived from the request.",
+                            "items": {
+                                "properties": {
+                                    "key": {
+                                        "maxLength": 32,
+                                        "minLength": 1,
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "maxLength": 32,
+                                        "minLength": 1,
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "maxItems": 5,
+                            "type": "array"
+                        },
+                        "FixedRate": {
+                            "description": "The percentage of matching requests to instrument, after the reservoir is exhausted.",
+                            "format": "double",
+                            "maximum": 1,
+                            "minimum": 0,
+                            "type": "number"
+                        },
+                        "HTTPMethod": {
+                            "description": "Matches the HTTP method of a request.",
+                            "maxLength": 10,
+                            "type": "string"
+                        },
+                        "Host": {
+                            "description": "Matches the hostname from a request URL.",
+                            "maxLength": 64,
+                            "type": "string"
+                        },
+                        "Priority": {
+                            "description": "The priority of the sampling rule.",
+                            "maximum": 9999,
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        "ReservoirSize": {
+                            "description": "A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.",
+                            "minimum": 0,
+                            "type": "integer"
+                        },
+                        "ResourceARN": {
+                            "description": "Matches the ARN of the AWS resource on which the service runs.",
+                            "maxLength": 500,
+                            "type": "string"
+                        },
+                        "RuleARN": {
+                            "description": "The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.",
+                            "type": "string"
+                        },
+                        "RuleName": {
+                            "description": "The name of the sampling rule. Specify a rule by either name or ARN, but not both.",
+                            "maxLength": 32,
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        "ServiceName": {
+                            "description": "Matches the <code>name</code> that the service uses to identify itself in segments.",
+                            "maxLength": 64,
+                            "type": "string"
+                        },
+                        "ServiceType": {
+                            "description": "Matches the <code>origin</code> that the service uses to identify its type in segments.",
+                            "maxLength": 64,
+                            "type": "string"
+                        },
+                        "URLPath": {
+                            "description": "Matches the path from a request URL.",
+                            "maxLength": 128,
+                            "type": "string"
+                        },
+                        "Version": {
+                            "description": "The version of the sampling rule format (<code>1</code>).",
+                            "minimum": 1,
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "ResourceARN",
+                        "Priority",
+                        "FixedRate",
+                        "ReservoirSize",
+                        "ServiceName",
+                        "ServiceType",
+                        "Host",
+                        "HTTPMethod",
+                        "URLPath",
+                        "Version"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "SamplingRule"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

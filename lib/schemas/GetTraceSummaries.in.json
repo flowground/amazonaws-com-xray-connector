@@ -1,0 +1,74 @@
+{
+    "type": "object",
+    "properties": {
+        "NextToken": {
+            "required": false,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "EndTime": {
+                    "description": "The end of the time frame for which to retrieve traces.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "FilterExpression": {
+                    "description": "Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.",
+                    "maxLength": 2000,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "NextToken": {
+                    "description": "Specify the pagination token returned by a previous request to retrieve the next page of results.",
+                    "type": "string"
+                },
+                "Sampling": {
+                    "description": "Set to <code>true</code> to get summaries for only a subset of available traces.",
+                    "type": "boolean"
+                },
+                "StartTime": {
+                    "description": "The start of the time frame for which to retrieve traces.",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StartTime",
+                "EndTime"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
