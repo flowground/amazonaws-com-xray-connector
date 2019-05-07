@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) AWS X-Ray MSP Connector
+# ![LOGO](logo.png) AWS X-Ray **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the AWS X-Ray API (version 2016-04-12).
+A generated **flow**ground connector for the AWS X-Ray API (version 2016-04-12).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/xray/2016-04-12/swagger.json<br/>
-Generated at: 2019-05-07T11:16:53+03:00
+Generated at: 2019-05-07T17:36:32+03:00
 
 ## API Description
 
@@ -266,7 +266,7 @@ Supported authorization schemes:
 
 ## License
 
-flowground :- Telekom iPaaS / amazonaws-com-xray-connector<br/>
+**flow**ground :- Telekom iPaaS / amazonaws-com-xray-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
